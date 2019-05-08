@@ -1,0 +1,61 @@
+<div class="oj-hybrid-padding">
+    <div id="validation-usecase"
+             class="oj-form oj-md-odd-cols-4 oj-md-labels-inline oj-sm-odd-cols-12">
+          <div class="oj-flex"> 
+        
+            <div class="oj-flex-item">
+              <oj-label for="username" show-required>Username</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-text id="username" autocomplete="off" required
+                             on-valid-changed="[[validChangedListener]]"
+                             validators="[[validators]]"
+                             name="username" value="{{userName}}"
+                             messages-custom="{{userNameMessagesCustom}}"
+                             placeholder="at least 3 alphanumeric characters">     
+              </oj-input-text>      
+            </div>
+        
+          </div>
+          <div class="oj-flex"> 
+            <div class="oj-flex-item">&nbsp;</div>
+            <div class="oj-flex-item">
+              <span id="namevalid" 
+                data-bind="text: '[Component\'s valid property: ' + userNameValid() + ']'"></span>  
+            </div>
+          </div>  
+          <hr/>
+          <div class="oj-flex"> 
+            <div class="oj-flex-item">
+              <oj-label for="password" show-required>Password</oj-label>
+            </div>
+            <div class="oj-flex-item">
+              <oj-input-password id="password" autocomplete="off" required 
+                                 on-valid-changed="[[validChangedListener]]"
+                                 validators="[[validators2]]"
+                                 name="password" 
+                                 value="{{password}}" 
+                                 help.instruction="Enter at least 6 characters including a number, one uppercase and lowercase letter">        
+              </oj-input-password>
+            </div>
+          </div>
+          <div class="oj-flex"> 
+            <div class="oj-flex-item">&nbsp;</div>
+            <div class="oj-flex-item">
+            <span id="passwordvalid" 
+                  data-bind="text: '[Component\'s valid property: ' + passwordValid() + ']'"></span> 
+            </div>
+          </div>
+          <hr/>
+          <div class="oj-flex"> 
+            <div class="oj-flex-item">&nbsp;</div>
+            <div class="oj-flex-item">
+              <oj-button id="submitBtn"
+                         on-oj-action="[[submit]]">Validate and Submit</oj-button>
+              <oj-button id="addCustomMsgBtn"
+                   on-oj-action="[[addCustomMessage]]">Add Custom Message</oj-button>
+            </div>
+          </div>
+        </div>
+
+</div>
